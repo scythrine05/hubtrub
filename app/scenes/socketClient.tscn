@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn21m0ybq2c5o"]
+
+[ext_resource type="Script" uid="uid://ds6e3srlbe1p0" path="res://scripts/socket_client.gd" id="1_u2gmv"]
+
+[node name="socketClient" type="Node2D"]
+script = ExtResource("1_u2gmv")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dv8ai37mgaafr"]
+[gd_scene load_steps=34 format=3 uid="uid://dv8ai37mgaafr"]
 
 [ext_resource type="Texture2D" uid="uid://ccnke5wusa6im" path="res://art/tilesets/v1-tiles/Beach_Tile.png" id="1_xo05s"]
 [ext_resource type="Texture2D" uid="uid://b8j235tpjcm0k" path="res://art/tilesets/v1-tiles/Cliff_Tile.png" id="2_dss4m"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dytsl8xkrgmmw" path="res://art/objects/v1-outdoor/Bridge_Wood.png" id="14_0nbtd"]
 [ext_resource type="Texture2D" uid="uid://b400svgpqxbmg" path="res://art/objects/v1-outdoor/Chest.png" id="15_37qwj"]
 [ext_resource type="PackedScene" uid="uid://bql1xct8pw43l" path="res://scenes/player.tscn" id="16_dss4m"]
+[ext_resource type="PackedScene" uid="uid://dn21m0ybq2c5o" path="res://scenes/socketClient.tscn" id="17_7t5mc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_navra"]
 texture = ExtResource("1_xo05s")
@@ -344,3 +345,8 @@ layer_5/y_sort_enabled = true
 layer_5/tile_data = PackedInt32Array(-1114113, 393224, 1, -1048577, 393224, 2, -983041, 393224, 3, -1179648, 458760, 1, -1114112, 458760, 2, -1048576, 458760, 3, -1179647, 524296, 1, -1114111, 524296, 2, -1048575, 524296, 3, -196621, 65546, 0, -131085, 10, 1, -65549, 10, 2, -13, 10, 3, 65523, 10, 0, 131059, 10, 1, 196595, 10, 2, 262131, 10, 3, 327667, 10, 0, 393203, 10, 1, 458739, 10, 2, 524275, 65546, 0, 524276, 131082, 0, 524277, 196618, 0, 524278, 65546, 0, 524279, 131082, 0, 524280, 196618, 0, 524281, 65546, 0, 524282, 131082, 0, 524283, 196618, 0, -196620, 131082, 0, -196619, 196618, 0, -1114130, 9, 0)
 
 [node name="player" parent="." instance=ExtResource("16_dss4m")]
+
+[node name="socketClient" parent="." instance=ExtResource("17_7t5mc")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("../player")

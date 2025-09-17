@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var socket = get_node("/root/world/socketClient")
+
 const speed = 30
 var curr_dir = "none"
 
@@ -8,6 +10,9 @@ func _ready():
 
 func _physics_process(delta):
 	player_movement(delta)
+	if socket.connected:
+		socket.send_player_data(str(multiplayer.get_unique_id()), global_position, velocity.length())
+
 	
 func player_movement(delta):
 	
